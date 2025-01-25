@@ -36,6 +36,7 @@ export default function Hero() {
                 isMobile ? (<div className="">
                     <motion.div
                         whileTap="tap"
+                        
                         whileHover={
                             {
                                 scale: 1.0,
@@ -64,6 +65,7 @@ export default function Hero() {
                     <div className="">
                         <motion.div
                             whileTap="tap"
+                            
                             whileHover={
                                 {
                                     scale: 1.0,
@@ -76,6 +78,7 @@ export default function Hero() {
                         </motion.div>
                         <motion.div
                             whileTap="tap"
+                            
                             whileHover={
                                 {
                                     scale: 1.0,

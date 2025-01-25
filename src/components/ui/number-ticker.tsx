@@ -29,6 +29,7 @@ export function NumberTicker({
   const isInView = useInView(ref, { once: true, margin: "0px" });
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     isInView &&
       setTimeout(() => {
         motionValue.set(direction === "down" ? 0 : value);

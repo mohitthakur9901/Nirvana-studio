@@ -63,36 +63,47 @@ export default function MenuBar() {
             </Button>
             <div className="">
 
-               <AnimatePresence>
-               {
-                    menuOpen && (
-                        <motion.div
-                            initial={{ scale: 0, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 0.3 , type :"spring"}}
-                            exit={{ scale: 0, opacity: 0 }}
+                <AnimatePresence>
+                    {
+                        menuOpen && (
+                            <motion.div
+                                initial={{ scale: 0, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ duration: 0.3, type: "spring" }}
+                                exit={{ scale: 0, opacity: 0 }}
 
-                            className="absolute cursor-pointer top-24 right-20 w-64 min-h-64 rounded-md bg-neutral-200 p-8 z-10 flex flex-col gap-4 origin-top-right">
-                            {
-                                routes.map((route) => (
+                                className="absolute cursor-pointer top-24 right-20 w-64 min-h-64 rounded-md bg-neutral-200 p-8 z-10 flex flex-col gap-4 origin-top-right">
+                                {
+                                    routes.map((route) => (
 
-                                    <Link className="text-3xl font-mono uppercase font-bold hover:" href={route.href} key={route.href}>
-                                        {route.label}
-                                    </Link>
+                                       <Link className="text-3xl font-mono uppercase font-bold hover:" href={route.href} key={route.href}>
+                                            {route.label}
+                                        </Link>
 
-                                ))
-                            }
-                            <InteractiveHoverButton>Contact</InteractiveHoverButton>
-                            <div className="flex gap-4">
-                         
-                                <LinkedInLogoIcon />
-                                <GitHubLogoIcon />
-                                <TwitterLogoIcon />
-                            </div>
-                        </motion.div>
-                    )
-                }
-               </AnimatePresence>
+                                    ))
+                                }
+                                <InteractiveHoverButton onClick={() => {
+                                    const emailAddress = 'mohitthakur9901@gmail.com';
+                                    const subject = 'Wanted To Connect With Me ';
+                                    const body = 'Hi, \n\nPlease write your message here.';
+
+                                    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
+                                        subject
+                                    )}&body=${encodeURIComponent(body)}`;
+
+                                    // Open the default email client with the pre-filled email
+                                    window.location.href = mailtoLink;
+                                }}>Contact</InteractiveHoverButton>
+                                <div className="flex gap-4">
+
+                                    <LinkedInLogoIcon />
+                                    <GitHubLogoIcon />
+                                    <TwitterLogoIcon />
+                                </div>
+                            </motion.div>
+                        )
+                    }
+                </AnimatePresence>
 
 
             </div>
