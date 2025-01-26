@@ -15,11 +15,10 @@ export default function Hero() {
             {
                 isMobile ? "" : (
                     <div className="flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
-                        <h1 className="text-6xl font-bold uppercase overflow-hidden ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Accusantium tempore modi temporibus molestiae sed,
-                            aperiam. Culpa, mollitia.
+                        <h1 className="text-6xl font-bold uppercase overflow-hidden ">
+                        Designing the Impossible, Developing the Unthinkable—Innovation Starts Here.
                         </h1><p className="font-semibold text-3xl pt-2">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, omnis.
+                        Every Pixel Matters, Every Line of Code Counts—Crafting the Perfect Digital Experience.
                         </p>
                     </div>
                 )
@@ -40,8 +39,7 @@ export default function Hero() {
                         className="flex items-center justify-end mr-5">
                         <h1 className="text-xl font-semibold w-60 mr-2">
                             {/* write a Slogan */}
-                            When Devs And Designers Meet, It&apos;
-                            s All About The Code And The Coffee.
+                            Every Pixel Matters, Every Line of Code Counts—Crafting the Perfect Digital Experience
                         </h1>
                         <Image src='/group1.avif' alt="1" height={100} width={100} className="rounded-md" />
                     </motion.div>

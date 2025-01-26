@@ -11,8 +11,6 @@ import { InteractiveHoverButton } from "./ui/interactive-hover-button";
 import { useRouter } from "next/navigation";
 
 
-
-
 export default function MenuBar() {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const router = useRouter();
@@ -30,7 +28,7 @@ export default function MenuBar() {
         closed: {
             d: "M0 8.5L24 8.5",
         }
-    }
+    };
 
     const path2Variants = {
         open: {
@@ -39,7 +37,7 @@ export default function MenuBar() {
         closed: {
             d: "M0 15.5L24 15.5",
         }
-    }
+    };
 
     useEffect(() => {
         if (menuOpen == true) {
@@ -50,7 +48,7 @@ export default function MenuBar() {
             path2Controles.start(path2Variants.closed);
 
         }
-    })
+    });
 
     return (
         <div className="menu-bar relative block ">
@@ -64,7 +62,7 @@ export default function MenuBar() {
 
                 </svg>
             </Button>
-            <div className="">
+            <div >
 
                 <AnimatePresence>
                     {
