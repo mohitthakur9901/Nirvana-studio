@@ -3,29 +3,31 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Feature() {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const isMobile = useIsMobile();
 
   const features = [
     {
       number: "01",
       title: "Scalable DevOps Solutions for Enterprises",
       image: "/group1.avif",
-      link: "/devops",
+      link: "/",
     },
     {
       number: "02",
       title: "Robust Web2 and Web3 Development Services",
       image: "/group2.avif",
-      link: "/web3",
+      link: "/",
     },
     {
       number: "03",
       title: "Cloud Infrastructure and CI/CD Automation",
       image: "/group3.avif",
-      link: "/work"
+      link: "/"
     },
   ];
 
@@ -62,29 +64,62 @@ export default function Feature() {
   return (
     <div className="relative border border-t-4">
       {/* Header Section */}
-      <div className="flex items-center justify-between p-5 border-black border-b-2">
-        <p className="text-4xl font-semibold uppercase w-1/2">
-          Transform Your Business with Cutting-Edge Tech Solutions
-        </p>
-        <Image src="/group2.avif" className="rounded-xl" alt="Feature" height={300} width={300} />
-      </div>
+      {
+        !isMobile ? (
+          <div className="flex items-center justify-between p-5 border-black border-b-2">
+            <p className="text-6xl font-semibold uppercase w-1/2">
+              Transform Your Business with Cutting-Edge Tech Solutions
+            </p>
+            <Image src="/group1.avif" className="rounded-xl" alt="Feature" height={300} width={300} />
+          </div>
+        ) : (
+          <div className="flex items-center justify-between p-5 border-black border-b-2">
+            <p className="text-4xl font-semibold uppercase w-1/2">
+              Transform Your Business with Cutting-Edge Tech Solutions
+            </p>
+            <Image src="/group1.avif" className="rounded-xl" alt="Feature" height={100} width={100} />
+          </div>
+        )
+      }
 
       {/* Feature List */}
       <div>
         {features.map((feature, index) => (
-          <div
-            key={index}
-            className="relative h-56  flex items-center justify-between px-10 py-6 border-black border-b-2 transition-all duration-300"
-            onMouseEnter={() => handleMouseEnter(feature.image)}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <p className="text-7xl uppercase font-bold text-gray-800">{feature.number}</p>
-            <p className="text-3xl uppercase text-gray-600">{feature.title}</p>
-            <Link href={feature.link}  className="text-7xl hover:bg-black hover:text-white hover:rounded-full hover:h-20 hover:w-20 flex items-center justify-center transition ease-in-out cursor-pointer">
+          isMobile ? (
+            <Link
+              href={feature.link}
+              key={index}
+              className="flex items-center justify-between p-5 border-black border-b-2"
+              onMouseEnter={() => handleMouseEnter(feature.image)}
+              onMouseLeave={handleMouseLeave}
+              onMouseMove={handleMouseMove}
+            >
+              <div>
+                <p className="text-2xl font-semibold uppercase">
+                  {feature.number}
+                </p>
+                <p className="text-xl font-semibold uppercase">
+                  {feature.title}
+                </p>
+              </div>
               <ArrowIcon />
             </Link>
-          </div>
+          ) : (
+              <div
+                key={index}
+                className="relative h-56  flex items-center justify-between px-10 py-6 border-black border-b-2 transition-all duration-300"
+                onMouseEnter={() => handleMouseEnter(feature.image)}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+              >
+                <p className="text-7xl uppercase font-bold text-gray-800">{feature.number}</p>
+                <p className="text-3xl uppercase text-gray-600">{feature.title}</p>
+                <Link href={feature.link} className="text-7xl hover:bg-black hover:text-white hover:rounded-full hover:h-20 hover:w-20 flex items-center justify-center transition ease-in-out cursor-pointer">
+                  <ArrowIcon />
+                </Link>
+              </div>
+          
+          )
         ))}
       </div>
 

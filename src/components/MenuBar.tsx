@@ -8,11 +8,14 @@ import Link from "next/link";
 import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import { useAnimation } from "motion/react";
 import { InteractiveHoverButton } from "./ui/interactive-hover-button";
+import { useRouter } from "next/navigation";
+
 
 
 
 export default function MenuBar() {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const router = useRouter();
 
     const path1Controles = useAnimation();
     const path2Controles = useAnimation();
@@ -53,7 +56,7 @@ export default function MenuBar() {
         <div className="menu-bar relative block ">
 
             <Button
-                className="rounded-full bg-white hover:bg-white  h-24 w-24 relative justify-self-center flex flex-col gap-2 cursor-pointer stroke-black stroke-2 z-50"
+                className="rounded-full bg-zinc-300 hover:bg-white  h-24 w-24 relative justify-self-center flex flex-col gap-2 cursor-pointer stroke-black stroke-2 z-50"
                 onClick={() => setMenuOpen(!menuOpen)}>
                 <svg width="40" height="40" viewBox="0 0 24 24" >
                     <motion.path {...path1Variants.closed} animate={path1Controles} transition={{ duration: 0.3 }} />
@@ -72,7 +75,7 @@ export default function MenuBar() {
                                 transition={{ duration: 0.3, type: "spring" }}
                                 exit={{ scale: 0, opacity: 0 }}
 
-                                className="absolute cursor-pointer top-24 right-20 w-64 min-h-64 rounded-md bg-neutral-200 p-8 z-10 flex flex-col gap-4 origin-top-right">
+                                className="absolute cursor-pointer top-24 right-10 w-64 min-h-64 rounded-md bg-neutral-200 p-8 z-50 flex flex-col gap-4 origin-top-right">
                                 {
                                     routes.map((route) => (
 
@@ -83,16 +86,7 @@ export default function MenuBar() {
                                     ))
                                 }
                                 <InteractiveHoverButton onClick={() => {
-                                    const emailAddress = 'mohitthakur9901@gmail.com';
-                                    const subject = 'Wanted To Connect With Me ';
-                                    const body = 'Hi, \n\nPlease write your message here.';
-
-                                    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
-                                        subject
-                                    )}&body=${encodeURIComponent(body)}`;
-
-                                    // Open the default email client with the pre-filled email
-                                    window.location.href = mailtoLink;
+                                    router.push('https://cal.com/mohit-thakur')
                                 }}>Contact</InteractiveHoverButton>
                                 <div className="flex gap-4">
 
