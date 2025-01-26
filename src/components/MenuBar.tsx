@@ -79,7 +79,7 @@ export default function MenuBar() {
                                 {
                                     routes.map((route) => (
 
-                                       <Link className="text-3xl font-mono uppercase font-bold hover:" href={route.href} key={route.href}>
+                                        <Link className="text-3xl font-mono uppercase font-bold hover:" href={route.href} key={route.href}>
                                             {route.label}
                                         </Link>
 
@@ -90,9 +90,18 @@ export default function MenuBar() {
                                 }}>Contact</InteractiveHoverButton>
                                 <div className="flex gap-4">
 
-                                    <LinkedInLogoIcon />
-                                    <GitHubLogoIcon />
-                                    <TwitterLogoIcon />
+                                    <Link href="https://x.com/MOHIT__002">
+                                        <TwitterLogoIcon />
+
+                                    </Link>
+                                    <Link href="https://www.linkedin.com/in/mohit-thakur-648ab119b/">
+                                        <LinkedInLogoIcon />
+
+                                    </Link>
+                                    <Link href="https://github.com/mohitthakur9901">
+                                        <GitHubLogoIcon />
+                                    </Link>
+
                                 </div>
                             </motion.div>
                         )
