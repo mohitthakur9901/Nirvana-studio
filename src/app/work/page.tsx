@@ -4,7 +4,7 @@ import WorkPage from "@/components/WorkPage";
 export default function Work() {
     return (
         
-       <div className="">
+       <div>
         <StartupSection/>
         <WorkPage/>
        </div>
