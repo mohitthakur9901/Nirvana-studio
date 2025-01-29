@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 import AppBar from "@/components/AppBar";
 import Footer from "@/components/Footer";
@@ -26,12 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppBar/>
         {children}
         <Footer/>
+        <SpeedInsights/>
       </body>
     </html>
   );
