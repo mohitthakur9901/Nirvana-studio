@@ -10,7 +10,7 @@ export default function HeroVideo() {
             <HeroVideoDialog
                 className="dark:hidden block h-1/2 w-1/2"
                 videoSrc="herovideo.mp4"
-                thumbnailSrc="/bg.jpg"
+                thumbnailSrc="/thumnail.jpg"
                 thumbnailAlt="Hero Video"
             />
             

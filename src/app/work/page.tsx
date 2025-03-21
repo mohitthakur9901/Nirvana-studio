@@ -1,3 +1,4 @@
+
 import StartupSection from "@/components/StartupSection";
 import WorkPage from "@/components/WorkPage";
 import { Metadata } from "next";

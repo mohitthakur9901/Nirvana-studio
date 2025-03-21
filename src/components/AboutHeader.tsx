@@ -14,7 +14,7 @@ export default function AboutHeader() {
     return (
         <div className={`${isMobile ? "max-w-screen-sm" :""}`}>
             <div className="flex flex-col items-start justify-start ml-10 mt-10 cursor-pointer">
-                <h1 className={`${isMobile ? "text-4xl mb-5 w-1/2" : "text-4xl mb-5 w-1/3"}`}>We&apos;re a tteam of Dev folks and tech greek passionate about the transformative power of technology</h1>
+                <h1 className={`${isMobile ? "text-4xl mb-5 w-1/2" : "text-4xl mb-5 w-1/3"}`}>We&apos;re a team of Dev folks and tech greek passionate about the transformative power of technology</h1>
                 <InteractiveHoverButton 
                 onClick={() => {
                     router.push('https://cal.com/mohit-thakur')

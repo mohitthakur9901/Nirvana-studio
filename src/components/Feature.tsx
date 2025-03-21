@@ -13,19 +13,19 @@ export default function Feature() {
   const features = [
     {
       number: "01",
-      title: "Scalable DevOps Solutions for Enterprises",
+      title: "Scalable Web Application",
       image: "/group1.avif",
       link: "/",
     },
     {
       number: "02",
-      title: "Robust Web2 and Web3 Development Services",
+      title: "Robust Moblie App Development Services",
       image: "/group2.avif",
       link: "/",
     },
     {
       number: "03",
-      title: "Cloud Infrastructure and CI/CD Automation",
+      title: "Next Level UI/UX Desgin",
       image: "/group3.avif",
       link: "/"
     },
@@ -128,9 +128,10 @@ export default function Feature() {
         <Image
           src={hoveredImage}
           alt="Feature Preview"
-          height={300}
-          width={300}
+          height={isMobile ? 150 : 300}
+          width={isMobile ? 150 : 300}
           className="absolute rounded-xl pointer-events-none transition-transform duration-200"
+          // it should not move x-axis more than 
           style={{
             top: position.y - 10,
             left: position.x - 10,

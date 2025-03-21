@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Nirvana Studio",
   description: "Software Development Agency",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

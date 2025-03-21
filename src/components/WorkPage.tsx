@@ -12,7 +12,7 @@ export default function WorkPage() {
           isMobile ? "text-[4rem]" : "text-[10rem]"
         } font-semibold font-serif text-center`}
       >
-        OUR WORK
+        OUR VISION
       </h1>
 
       <div className="flex flex-col gap-y-5 items-center justify-center mb-5">
@@ -27,12 +27,7 @@ export default function WorkPage() {
           imageSrc="https://cdn.prod.website-files.com/6396257fec13a8df1b522d2f/65803ddd29f550aa3a985ca2_Paradigm-Home-Page-Section-Our-Works.webp"
         />
 
-        <Safari
-          className={`${
-            isMobile ? "w-full max-w-xs h-auto" : "w-[10rem] h-[10rem]"
-          }`}
-          imageSrc="https://cdn.prod.website-files.com/6396257fec13a8df1b522d2f/64e6028c1b4ae39f8d470352_Euphemia%20About%20Page%20Section%20Portfolio-p-1600.webp"
-        />
+       
       </div>
     </div>
   );

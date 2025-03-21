@@ -17,11 +17,9 @@ export default function Footer() {
         <div className="w-full md:w-1/3  pb-5">
           <h2 className="text-2xl font-semibold mb-3">Contact Us</h2>
           <p className="text-lg">
-            123 Main Street, City, Country
+            Delhi,India
             <br />
-            Phone: +00 0000 0000 000
-            <br />
-            Email: info@example.com
+            Email: mohitthakur9901@gmail.com
           </p>
         </div>
 
@@ -32,7 +30,7 @@ export default function Footer() {
           </h2>
           <InteractiveHoverButton onClick={() => {
             router.push('https://cal.com/mohit-thakur')
-          }} className="text-lg px-6 py-3 font-semibold">
+          }} className="text-lg px-6 py-3 font-semibold ">
             Let&apos;s Accelerate 🚀
           </InteractiveHoverButton>
         </div>
