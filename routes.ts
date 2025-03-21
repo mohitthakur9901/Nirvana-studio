@@ -18,11 +18,6 @@ export const routes = [
         isPublic: true
     },
     {
-        label: "Blogs",
-        href: "/blogs",
-        isPublic: true
-    },
-    {
         label: "Work",
         href: "/work",
         isPublic: true
